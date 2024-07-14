@@ -13,9 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/**
- *
- */
 package org.activiti.standalone.cfg;
 
 import java.util.List;
@@ -26,75 +23,74 @@ import org.activiti.engine.impl.Page;
 import org.activiti.engine.impl.interceptor.CommandContext;
 import org.activiti.engine.task.Attachment;
 
-/**
-
- *
- */
 public class AttachmentQuery extends AbstractQuery<AttachmentQuery, Attachment> {
 
-  private static final long serialVersionUID = 1L;
-  protected String attachmentId;
-  protected String attachmentName;
-  protected String attachmentType;
-  protected String userId;
-  protected String taskId;
-  protected String processInstanceId;
+    private static final long serialVersionUID = 1L;
 
-  public AttachmentQuery(ManagementService managementService) {
-    super(managementService);
-  }
+    // Private fields for filtering criteria
+    private String attachmentId;
+    private String attachmentName;
+    private String attachmentType;
+    private String userId;
+    private String taskId;
+    private String processInstanceId;
 
-  public AttachmentQuery attachmentId(String attachmentId) {
-    this.attachmentId = attachmentId;
-    return this;
-  }
+    public AttachmentQuery(ManagementService managementService) {
+        super(managementService);
+    }
 
-  public AttachmentQuery attachmentName(String attachmentName) {
-    this.attachmentName = attachmentName;
-    return this;
-  }
+    // Setter methods for setting filtering criteria
+    public AttachmentQuery attachmentId(String attachmentId) {
+        this.attachmentId = attachmentId;
+        return this;
+    }
 
-  public AttachmentQuery attachmentType(String attachmentType) {
-    this.attachmentType = attachmentType;
-    return this;
-  }
+    public AttachmentQuery attachmentName(String attachmentName) {
+        this.attachmentName = attachmentName;
+        return this;
+    }
 
-  public AttachmentQuery userId(String userId) {
-    this.userId = userId;
-    return this;
-  }
+    public AttachmentQuery attachmentType(String attachmentType) {
+        this.attachmentType = attachmentType;
+        return this;
+    }
 
-  public AttachmentQuery taskId(String taskId) {
-    this.taskId = taskId;
-    return this;
-  }
+    public AttachmentQuery userId(String userId) {
+        this.userId = userId;
+        return this;
+    }
 
-  public AttachmentQuery processInstanceId(String processInstanceId) {
-    this.processInstanceId = processInstanceId;
-    return this;
-  }
+    public AttachmentQuery taskId(String taskId) {
+        this.taskId = taskId;
+        return this;
+    }
 
-  public AttachmentQuery orderByAttachmentId() {
-    return orderBy(AttachmentQueryProperty.ATTACHMENT_ID);
-  }
+    public AttachmentQuery processInstanceId(String processInstanceId) {
+        this.processInstanceId = processInstanceId;
+        return this;
+    }
 
-  public AttachmentQuery orderByAttachmentName() {
-    return orderBy(AttachmentQueryProperty.NAME);
-  }
+    // Methods for setting order criteria
+    public AttachmentQuery orderByAttachmentId() {
+        return orderBy(AttachmentQueryProperty.ATTACHMENT_ID);
+    }
 
-  public AttachmentQuery orderByAttachmentCreateTime() {
-    return orderBy(AttachmentQueryProperty.CREATE_TIME);
-  }
+    public AttachmentQuery orderByAttachmentName() {
+        return orderBy(AttachmentQueryProperty.NAME);
+    }
 
-  @Override
-  public long executeCount(CommandContext commandContext) {
-    return (Long) commandContext.getDbSqlSession().selectOne("selectAttachmentCountByQueryCriteria", this);
-  }
+    public AttachmentQuery orderByAttachmentCreateTime() {
+        return orderBy(AttachmentQueryProperty.CREATE_TIME);
+    }
 
-  @SuppressWarnings("unchecked")
-  @Override
-  public List<Attachment> executeList(CommandContext commandContext, Page page) {
-    return commandContext.getDbSqlSession().selectList("selectAttachmentByQueryCriteria", this);
-  }
+    @Override
+    public long executeCount(CommandContext commandContext) {
+        return (Long) commandContext.getDbSqlSession().selectOne("selectAttachmentCountByQueryCriteria", this);
+    }
 
+    @SuppressWarnings("unchecked")
+    @Override
+    public List<Attachment> executeList(CommandContext commandContext, Page page) {
+        return commandContext.getDbSqlSession().selectList("selectAttachmentByQueryCriteria", this);
+    }
 }
