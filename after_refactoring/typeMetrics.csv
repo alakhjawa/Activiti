@@ -299,11 +299,10 @@ Project Name,Package Name,Type Name,NOF,NOPF,NOM,NOPM,LOC,WMC,NC,DIT,LCOM,FANIN,
 .,org.activiti.api.task.model.builders,AssignTasksPayloadBuilder,2,0,4,4,19,4,0,0,0.0,0,0
 .,org.activiti.api.task.model.builders,GetTaskVariablesPayloadBuilder,1,0,2,2,10,2,0,0,0.0,0,0
 .,org.activiti.api.task.model.builders,DeleteTaskPayloadBuilder,2,0,3,3,15,3,0,0,0.0,0,0
-.,org.activiti.api.task.model.builders,RemoveTaskVariablesPayloadBuilder,6,0,7,7,35,7,0,0,1.0,0,0
+.,org.activiti.api.task.model.builders,RemoveTaskVariablesPayloadBuilder,6,0,6,6,32,6,0,0,1.0,0,0
 .,org.activiti.api.task.model.builders,AssignTaskPayloadBuilder,2,0,3,3,15,3,0,0,0.0,0,0
 .,org.activiti.api.task.model.builders,CreateTaskPayloadBuilder,9,0,12,12,64,14,0,0,0.0,0,0
-.,org.activiti.api.task.model.payloads,UpdateTaskPayload,18,0,19,18,94,19,0,0,0.10526315789473684,9,1
-.,org.activiti.api.task.model.payloads,Builder,9,0,9,9,45,9,0,0,1.0,1,0
+.,org.activiti.api.task.model.payloads,UpdateTaskPayload,9,0,19,19,76,19,0,0,0.10526315789473684,9,0
 .,org.activiti.api.task.model.payloads,SaveTaskPayload,3,0,7,7,28,7,0,0,0.2857142857142857,4,0
 .,org.activiti.api.task.model.payloads,CreateTaskPayload,10,0,21,21,84,21,0,0,0.09523809523809523,3,0
 .,org.activiti.api.task.model.payloads,DeleteTaskPayload,3,0,8,8,31,8,0,0,0.25,5,0
@@ -1302,7 +1301,7 @@ Project Name,Package Name,Type Name,NOF,NOPF,NOM,NOPM,LOC,WMC,NC,DIT,LCOM,FANIN,
 .,org.activiti.standalone.cfg,CustomTaskQuery,4,0,8,8,35,8,0,0,0.875,0,4
 .,org.activiti.standalone.cfg,AttachmentQueryProperty,12,9,3,3,26,3,0,0,0.0,2,1
 .,org.activiti.standalone.cfg,CustomMybatisXMLMapperTest,0,0,14,10,135,25,0,0,-1.0,0,4
-.,org.activiti.standalone.cfg,AttachmentQuery,7,0,12,12,53,12,0,0,1.0,0,4
+.,org.activiti.standalone.cfg,AttachmentQuery,7,0,12,12,51,12,0,0,1.0,0,4
 .,org.activiti.standalone.testing,MockSupportWithActivitiRuleTest,1,1,8,7,54,10,0,0,0.0,0,3
 .,org.activiti.standalone.testing,ActivitiTestCaseTest,0,0,1,1,11,1,0,0,-1.0,0,1
 .,org.activiti.standalone.testing,ActivitiRuleJunit4SubclassTest,0,0,0,0,5,0,0,1,-1.0,0,0
@@ -2355,7 +2354,7 @@ Project Name,Package Name,Type Name,NOF,NOPF,NOM,NOPM,LOC,WMC,NC,DIT,LCOM,FANIN,
 .,org.activiti.engine.impl.calendar,AdvancedSchedulerResolver,0,0,1,0,13,1,2,0,-1.0,0,1
 .,org.activiti.engine.impl.calendar,BusinessCalendarImpl,1,0,5,5,19,5,3,1,0.6,0,1
 .,org.activiti.engine.impl.calendar,DefaultBusinessCalendar,1,0,5,4,51,7,0,1,0.6,0,1
-.,org.activiti.engine.impl.calendar,CronExpression,31,1,21,7,1045,218,0,0,0.09523809523809523,1,1
+.,org.activiti.engine.impl.calendar,CronExpression,31,1,32,7,1062,224,0,0,0.0625,1,1
 .,org.activiti.engine.impl.calendar,ValueSet,2,2,0,0,4,0,0,0,-1.0,0,0
 .,org.activiti.engine.impl.calendar,DurationHelper,9,0,16,11,132,29,0,0,0.0,3,2
 .,org.activiti.engine.impl.calendar,BusinessCalendarManager,0,0,1,0,5,1,1,0,-1.0,1,0

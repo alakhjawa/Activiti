@@ -72,12 +72,12 @@ public class UpdateTaskPayloadBuilder {
 
     public UpdateTaskPayload build() {
         return new UpdateTaskPayload(taskId,
-                                     name,
-                                     description,
-                                     dueDate,
-                                     priority,
-                                     assignee,
-                                     parentTaskId,
-                                     formKey);
+            name,
+            description,
+            dueDate,
+            priority,
+            assignee,
+            parentTaskId,
+            formKey);
     }
 }

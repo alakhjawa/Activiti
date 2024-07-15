@@ -32,71 +32,27 @@ public class UpdateTaskPayload implements Payload {
     private String parentTaskId;
     private String formKey;
 
-    private UpdateTaskPayload(Builder builder) {
-        this.id = builder.id;
-        this.taskId = builder.taskId;
-        this.name = builder.name;
-        this.description = builder.description;
-        this.dueDate = builder.dueDate;
-        this.priority = builder.priority;
-        this.assignee = builder.assignee;
-        this.parentTaskId = builder.parentTaskId;
-        this.formKey = builder.formKey;
+    public UpdateTaskPayload() {
+        this.id = UUID.randomUUID().toString();
     }
 
-    public static class Builder {
-        private String id = UUID.randomUUID().toString();
-        private String taskId;
-        private String name;
-        private String description;
-        private Date dueDate;
-        private Integer priority;
-        private String assignee;
-        private String parentTaskId;
-        private String formKey;
-
-        public Builder(String taskId) {
-            this.taskId = taskId;
-        }
-
-        public Builder name(String name) {
-            this.name = name;
-            return this;
-        }
-
-        public Builder description(String description) {
-            this.description = description;
-            return this;
-        }
-
-        public Builder dueDate(Date dueDate) {
-            this.dueDate = dueDate;
-            return this;
-        }
-
-        public Builder priority(Integer priority) {
-            this.priority = priority;
-            return this;
-        }
-
-        public Builder assignee(String assignee) {
-            this.assignee = assignee;
-            return this;
-        }
-
-        public Builder parentTaskId(String parentTaskId) {
-            this.parentTaskId = parentTaskId;
-            return this;
-        }
-
-        public Builder formKey(String formKey) {
-            this.formKey = formKey;
-            return this;
-        }
-
-        public UpdateTaskPayload build() {
-            return new UpdateTaskPayload(this);
-        }
+    public UpdateTaskPayload(String taskId,
+                             String name,
+                             String description,
+                             Date dueDate,
+                             Integer priority,
+                             String assignee,
+                             String parentTaskId,
+                             String formKey) {
+        this();
+        this.taskId = taskId;
+        this.name = name;
+        this.description = description;
+        this.dueDate = dueDate;
+        this.priority = priority;
+        this.assignee = assignee;
+        this.parentTaskId = parentTaskId;
+        this.formKey = formKey;
     }
 
     @Override
@@ -108,31 +64,63 @@ public class UpdateTaskPayload implements Payload {
         return taskId;
     }
 
+    public void setTaskId(String taskId) {
+        this.taskId = taskId;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
         return description;
     }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public Date getDueDate() {
         return dueDate;
+    }
+
+    public void setDueDate(Date dueDate) {
+        this.dueDate = dueDate;
     }
 
     public Integer getPriority() {
         return priority;
     }
 
+    public void setPriority(Integer priority) {
+        this.priority = priority;
+    }
+
     public String getAssignee() {
         return assignee;
+    }
+
+    public void setAssignee(String assignee) {
+        this.assignee = assignee;
     }
 
     public String getParentTaskId() {
         return parentTaskId;
     }
 
+    public void setParentTaskId(String parentTaskId) {
+        this.parentTaskId = parentTaskId;
+    }
+
     public String getFormKey() {
         return formKey;
+    }
+
+    public void setFormKey(String formKey) {
+        this.formKey = formKey;
     }
 }

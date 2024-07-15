@@ -1659,7 +1659,6 @@ Project Name,Package Name,Type Name,MethodName,LOC,CC,PC
 .,org.activiti.api.task.model.builders,RemoveTaskVariablesPayloadBuilder,withDescription,4,1,1
 .,org.activiti.api.task.model.builders,RemoveTaskVariablesPayloadBuilder,withDueDate,4,1,1
 .,org.activiti.api.task.model.builders,RemoveTaskVariablesPayloadBuilder,withPriority,4,1,1
-.,org.activiti.api.task.model.builders,RemoveTaskVariablesPayloadBuilder,build,3,1,0
 .,org.activiti.api.task.model.builders,AssignTaskPayloadBuilder,withAssignee,4,1,1
 .,org.activiti.api.task.model.builders,AssignTaskPayloadBuilder,withTaskId,4,1,1
 .,org.activiti.api.task.model.builders,AssignTaskPayloadBuilder,build,3,1,0
@@ -15370,7 +15369,18 @@ Project Name,Package Name,Type Name,MethodName,LOC,CC,PC
 .,org.activiti.engine.impl.calendar,CronExpression,setTimeZone,3,1,1
 .,org.activiti.engine.impl.calendar,CronExpression,toString,3,1,0
 .,org.activiti.engine.impl.calendar,CronExpression,buildExpression,69,17,1
-.,org.activiti.engine.impl.calendar,CronExpression,storeExpressionVals,179,45,3
+.,org.activiti.engine.impl.calendar,CronExpression,storeExpressionVals,26,7,3
+.,org.activiti.engine.impl.calendar,CronExpression,isValidLetterExpression,3,1,2
+.,org.activiti.engine.impl.calendar,CronExpression,processLetterExpression,40,8,3
+.,org.activiti.engine.impl.calendar,CronExpression,validateMonth,5,2,2
+.,org.activiti.engine.impl.calendar,CronExpression,validateDayOfWeek,5,2,2
+.,org.activiti.engine.impl.calendar,CronExpression,parseNthDayOfWeek,12,2,2
+.,org.activiti.engine.impl.calendar,CronExpression,processQuestionMark,17,5,3
+.,org.activiti.engine.impl.calendar,CronExpression,processAsteriskOrSlash,13,4,3
+.,org.activiti.engine.impl.calendar,CronExpression,processSlash,16,3,3
+.,org.activiti.engine.impl.calendar,CronExpression,validateIncrement,20,7,3
+.,org.activiti.engine.impl.calendar,CronExpression,processL,22,7,3
+.,org.activiti.engine.impl.calendar,CronExpression,processDigit,17,3,3
 .,org.activiti.engine.impl.calendar,CronExpression,checkNext,122,20,4
 .,org.activiti.engine.impl.calendar,CronExpression,skipWhiteSpace,5,2,2
 .,org.activiti.engine.impl.calendar,CronExpression,findNextWhiteSpace,5,2,2

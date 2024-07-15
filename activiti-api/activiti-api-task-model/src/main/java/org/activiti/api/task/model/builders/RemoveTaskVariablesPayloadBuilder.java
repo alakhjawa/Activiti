@@ -57,8 +57,5 @@ public class RemoveTaskVariablesPayloadBuilder {
         this.priority = priority;
         return this;
     }
-
-    public UpdateTaskPayload build() {
-        return new UpdateTaskPayload();
-    }
+    
 }
