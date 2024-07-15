@@ -26,6 +26,7 @@ import org.activiti.bpmn.model.SequenceFlow;
 import org.activiti.validation.ValidationError;
 import org.activiti.validation.validator.Problems;
 import org.activiti.validation.validator.ProcessLevelValidator;
+import org.activiti.validation.validator.ValidationWarningDetails;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -68,8 +69,8 @@ public class ExclusiveGatewayValidator extends ProcessLevelValidator {
       }
 
       if (!flowsWithoutCondition.isEmpty()) {
-        addWarning(errors, Problems.EXCLUSIVE_GATEWAY_SEQ_FLOW_WITHOUT_CONDITIONS, process, exclusiveGateway,
-            "Exclusive gateway has at least one outgoing sequence flow without a condition (which isn't the default one)");
+        addWarning(
+                new ValidationWarningDetails(errors, Problems.EXCLUSIVE_GATEWAY_SEQ_FLOW_WITHOUT_CONDITIONS, process, exclusiveGateway, "Exclusive gateway has at least one outgoing sequence flow without a condition (which isn't the default one)"));
       }
 
     }

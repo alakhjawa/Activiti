@@ -28,6 +28,7 @@ import org.activiti.bpmn.model.TimerEventDefinition;
 import org.activiti.validation.ValidationError;
 import org.activiti.validation.validator.Problems;
 import org.activiti.validation.validator.ProcessLevelValidator;
+import org.activiti.validation.validator.ValidationWarningDetails;
 
 public class AsyncPropertyValidator extends ProcessLevelValidator {
 
@@ -44,15 +45,15 @@ public class AsyncPropertyValidator extends ProcessLevelValidator {
             }
 
             if ((flowElement instanceof FlowNode) && ((FlowNode) flowElement).isAsynchronous()) {
-                addWarning(errors, Problems.FLOW_ELEMENT_ASYNC_NOT_AVAILABLE, process , flowElement, "Async property is not available when asyncExecutor is disabled.");
+                addWarning(new ValidationWarningDetails(errors, Problems.FLOW_ELEMENT_ASYNC_NOT_AVAILABLE, process, flowElement, "Async property is not available when asyncExecutor is disabled."));
             }
 
             if ((flowElement instanceof Event)) {
                 ((Event) flowElement).getEventDefinitions().stream().forEach(event -> {
                     if (event instanceof TimerEventDefinition) {
-                        addWarning(errors, Problems.EVENT_TIMER_ASYNC_NOT_AVAILABLE, process, flowElement, "Timer event is not available when asyncExecutor is disabled.");
+                        addWarning(new ValidationWarningDetails(errors, Problems.EVENT_TIMER_ASYNC_NOT_AVAILABLE, process, flowElement, "Timer event is not available when asyncExecutor is disabled."));
                     } else if ((event instanceof SignalEventDefinition) && ((SignalEventDefinition) event).isAsync() ) {
-                        addWarning(errors, Problems.SIGNAL_ASYNC_NOT_AVAILABLE, process, flowElement, "Async property is not available when asyncExecutor is disabled.");
+                        addWarning(new ValidationWarningDetails(errors, Problems.SIGNAL_ASYNC_NOT_AVAILABLE, process, flowElement, "Async property is not available when asyncExecutor is disabled."));
                     }
                 });
             }

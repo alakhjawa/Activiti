@@ -44,8 +44,8 @@ public abstract class ValidatorImpl implements Validator {
     addError(validationErrors, problem, process, baseElement, description, false);
   }
 
-  protected void addWarning(List<ValidationError> validationErrors, String problem, Process process, BaseElement baseElement, String description) {
-    addError(validationErrors, problem, process, baseElement, description, true);
+  protected void addWarning(ValidationWarningDetails validationWarningDetails) {
+    addError(validationWarningDetails.validationErrors(), validationWarningDetails.problem(), validationWarningDetails.process(), validationWarningDetails.baseElement(), validationWarningDetails.description(), true);
   }
 
   protected void addError(List<ValidationError> validationErrors, String problem, Process process, BaseElement baseElement, String description, boolean isWarning) {

@@ -26,6 +26,7 @@ import org.activiti.bpmn.model.Process;
 import org.activiti.validation.ValidationError;
 import org.activiti.validation.validator.Constraints;
 import org.activiti.validation.validator.Problems;
+import org.activiti.validation.validator.ValidationWarningDetails;
 import org.activiti.validation.validator.ValidatorImpl;
 
 /**
@@ -50,8 +51,8 @@ public class BpmnModelValidator extends ValidatorImpl {
     if (isAtLeastOneExecutable) {
       for (Process process : bpmnModel.getProcesses()) {
         if (!process.isExecutable()) {
-          addWarning(errors, Problems.PROCESS_DEFINITION_NOT_EXECUTABLE, process, process,
-              "Process definition is not executable. Please verify that this is intentional.");
+          addWarning(
+              new ValidationWarningDetails(errors, Problems.PROCESS_DEFINITION_NOT_EXECUTABLE, process, process, "Process definition is not executable. Please verify that this is intentional."));
         }
         handleProcessConstraints(bpmnModel, process, errors);
       }
